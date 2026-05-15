@@ -1,30 +1,32 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:aether_project/features/chat/chat_repository.dart';
+import 'package:aether_project/main.dart';
+import 'package:aether_project/raid_service.dart';
+import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:drovenue/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('renders the Project Aether dashboard', (
+    WidgetTester tester,
+  ) async {
+    final FakeFirebaseFirestore firestore = FakeFirebaseFirestore();
+    await firestore.collection('events').doc('dragon_raid').set(
+      <String, Object>{'slots_filled': 0, 'max_slots': 15},
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    await tester.pumpWidget(
+      AetherApp(
+        raidService: RaidService(firestore: firestore),
+        chatRepository: FirestoreChatRepository(firestore: firestore),
+      ),
+    );
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Project Aether'), findsOneWidget);
+    expect(find.text('Global Pulse'), findsOneWidget);
+    expect(find.text('Geo-Raid'), findsOneWidget);
+    expect(find.text('Engagement Chat'), findsOneWidget);
+
+    await tester.pumpWidget(const SizedBox.shrink());
   });
 }
