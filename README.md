@@ -20,7 +20,7 @@ The project includes the provided Firebase config for project `chatmate-4485a`:
 - Android: `android/app/google-services.json`
 - iOS: `ios/Runner/GoogleService-Info.plist`
 
-Native IDs are configured as `com.yash.drovenue`, while the Dart package name is `aether_project` so the supplied test harness can import `package:aether_project/raid_service.dart`.
+Native IDs are configured as `com.yash.drovenue`, and the Dart package name remains `drovenue`.
 
 ## Verification
 
