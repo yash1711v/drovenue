@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "914262169818",
+    "project_id": "chatmate-4485a",
+    "storage_bucket": "chatmate-4485a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914262169818:android:049a676b579840a708ade3",
+        "android_client_info": {
+          "package_name": "com.yash.drovenue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914262169818-v837b36hd47fa3s2gi61cnj1tbt7qb3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7rpMVRPp3ZMaGpy6Vp-GguAzmaZhsoSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914262169818-v837b36hd47fa3s2gi61cnj1tbt7qb3q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "914262169818-392qbgmjlvrm98blmchohtl6kbea0smf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.yash.drovenue"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
