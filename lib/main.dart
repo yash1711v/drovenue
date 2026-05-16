@@ -17,15 +17,15 @@ Future<void> main() async {
   configureDependencies();
 
   runApp(
-    AetherApp(
+    DrovenueApp(
       raidService: serviceLocator<RaidService>(),
       chatRepository: serviceLocator<ChatRepository>(),
     ),
   );
 }
 
-class AetherApp extends StatelessWidget {
-  const AetherApp({
+class DrovenueApp extends StatelessWidget {
+  const DrovenueApp({
     required this.raidService,
     required this.chatRepository,
     super.key,

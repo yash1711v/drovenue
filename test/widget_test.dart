@@ -15,7 +15,7 @@ void main() {
     );
 
     await tester.pumpWidget(
-      AetherApp(
+      DrovenueApp(
         raidService: RaidService(firestore: firestore),
         chatRepository: FirestoreChatRepository(firestore: firestore),
       ),
